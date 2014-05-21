@@ -1,7 +1,14 @@
 class Folder(Element):
-  def __init__(self, name, size):
-    super().__init__(name, size)
+  root = None;
+  
+  def __init__(self, name, size, parent):
+    super().__init__(name, size, parent)
     self.__contains = [];
+    
+    if parent == None and root == None:
+      root = self
+    elif parent == None and isinstance(root, Folder):
+      raise Exception("Root Folder already exists")
 
   def getSize(self):
     self.__size = 0
@@ -12,5 +19,13 @@ class Folder(Element):
   def addFile(self, file):
     self.__contains.push(file)
     
+  def drawTree(self):
+    x = True
+    var root;
+    while (x):
+      root = 
+      
   
+  def drawTree(self):
+    Folder.drawTree();
     
