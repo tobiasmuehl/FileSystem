@@ -9,5 +9,8 @@ class Folder(Element):
       self.__size += element.getSize()
     return self.__size
     
+  def addFile(self, file):
+    self.__contains.push(file)
+    
   
     
