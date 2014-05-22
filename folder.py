@@ -15,17 +15,15 @@ class Folder(Element):
     for element in self.__contains:
       self.__size += element.getSize()
     return self.__size
-    
+
   def addFile(self, file):
     self.__contains.push(file)
-    
+
+  def drawTree():
+    drawTree(root)
+
   def drawTree(self):
-    x = True
-    var root;
-    while (x):
-      root = 
-      
-  
-  def drawTree(self):
-    Folder.drawTree();
-    
+    for x in obj.__contains:
+      if isinstance(x, Folder):
+        print(x.getName())
+        drawTree(x)
