@@ -9,9 +9,12 @@ class File(Element):
       self.__size = size
     else:
       raise Exception()
+
+    parent.addElement(self)
   
   def getSize(self):
     return self.__size
+
 
   def getType(self):
     extensions = {
