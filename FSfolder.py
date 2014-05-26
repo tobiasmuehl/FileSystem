@@ -6,17 +6,15 @@ class Folder(Element):
     root = None
     
     def __init__(self, name, parent):
-      Element.__init__(self, name, parent)
       if parent == None:
           if Folder.root == None:
             Folder.root = self
             parent = self
           else: raise Exception()
-      else:
-          if Folder.root == None:
-            raise Exception()
 
       self.__content = [];
+      
+      Element.__init__(self, name, parent)
     
     def drawTree():
         Folder.root.drawFolders(0)
