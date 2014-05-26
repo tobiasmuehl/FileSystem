@@ -6,22 +6,15 @@ class Folder(Element):
   root = None
   
   def __init__(self, name, parent):
-    self.__changeDate = datetime.datetime.now()
-    Element.__init__(self, name, parent)
-    self.__content = [];
     if parent == None:
-      if Folder.root == None:
-        Folder.root = self
-        parent = self
-      else: raise Exception()
-    else:
-      if Folder.root == None:
-        raise Exception()
-      else: 
-        self.__parent = parent
-        parent.addElement(self)
-    
+        if Folder.root == None:
+          Folder.root = self
+          parent = self
+        else: raise Exception()
 
+    self.__content = [];
+    
+    Element.__init__(self, name, parent)
   
   def drawTree():
     print('Baumansicht'.center(80));
