@@ -4,10 +4,10 @@ from FSfolder import Folder
 from FSRootFolder import RootFolder
 from FSfile import File
 
-def drawTree(root):
-  Folder.drawTree(root)
 
-root = RootFolder("/")
-fo = Folder("folder", root)
-fo2 = Folder("folder", fo)
-f = File("Filename", root, 10)
+fo = Folder("folder", None)
+fo2 = Folder("subfolder", fo)
+fo.addElement(fo2)
+f = File("Filename.txt", fo2, 10)
+fo2.addElement(f) # das kann man eig noch in die init von element einbauen fällt mir grad ein
+Folder.drawTree()
