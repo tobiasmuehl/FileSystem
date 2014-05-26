@@ -4,8 +4,23 @@ from FSelement import Element
 class Folder(Element):
   def __init__(self, name, parent):
     super.__init__(self, name, parent)
+    if root == None:
+      root = self
     self.__content = [];
+    
+  def drawTree():
+    root.drawFolders(0)
 
+  def drawFolders(self, level):
+    space = ""
+    for i in range(0, level):
+      space += "+"
+      
+    print(self.getName())
+    
+    for x in self.__content:
+      if isinstance(x, Folder):
+        x.drawFolders(level+1)
 
   def getSize(self):
     self.__size = 0
@@ -15,12 +30,6 @@ class Folder(Element):
 
   def addFile(self, file):
     self.__content.push(file)
-
-  def drawTree(self, level):
-    print(self.getName())
-    for x in self.__content:
-      if isinstance(x, Folder):
-        x.drawTree(level+1)
   
   def getChangeDate(self):
     last = self.__changeDate
