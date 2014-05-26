@@ -40,7 +40,6 @@ class Folder(Element):
 
     def addElement(self, e):
         self.__content.append(e)
-        e.__parent = self
   
     def getChangeDate(self):
         last = self.__changeDate
