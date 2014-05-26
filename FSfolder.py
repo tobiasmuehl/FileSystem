@@ -3,9 +3,8 @@ from FSelement import Element
 
 class Folder(Element):
   def __init__(self, name, parent):
-    Element.__init__(self, name, parent)
-    self.__contains = [];
-    self.__changeDate = None;
+    super.__init__(self, name, parent)
+    self.__content = [];
 
 
   def getSize(self):
@@ -15,26 +14,21 @@ class Folder(Element):
     return self.__size
 
   def addFile(self, file):
-    self.__contains.push(file)
+    self.__content.push(file)
 
-  def drawTree(self):
-    for x in self.__contains:
+  def drawTree(self, level):
+    print(self.getName())
+    for x in self.__content:
       if isinstance(x, Folder):
-        print(x.getName())
-        drawTree(x)
+        x.drawTree(level+1)
   
   def getChangeDate(self):
-    for x in self.__contains:
-      if isinstance(x, Folder):
-        x.getChangeDate()
-        
-      if isinstance(x, File):
-        new = x.getChangeDate();
-      
-      if new > changeDate:
-        changeDate = new
-    
-    return new
+    last = self.__changeDate
+    for x in self.__content:
+      changeDate = x.getChangeDate();
+      if changeDate > last:
+        last = changeDate
+    return last
 
   def setRoot(root):
     root = root
