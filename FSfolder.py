@@ -12,7 +12,7 @@ class Folder(Element):
   
   
   def __new__(self, name, parent=None):
-    if getRoot == 0:
+    if getRoot() == 0:
       setRoot(self)
     elif parent == "" and isinstance(getRoot(), Folder):
       raise Exception("Root Folder already exists")
