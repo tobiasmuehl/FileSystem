@@ -22,12 +22,12 @@ class Folder(Element):
     Folder.root.drawFolders(0)
 
   def drawFolders(self, level):
-    space = ""
+    space = "+"
     for i in range(0, level):
-      space += "+"
-  
+      space = "--" + space
+      
     print(space, self.getName())
-
+    
     for x in self.__content:
       if isinstance(x, Folder):
         x.drawFolders(level+1)
