@@ -49,9 +49,6 @@ class Folder(Element):
             last = changeDate
         return last
 
-    def setRoot(root):
-        root = root
-
     def listView(self):
       for x in self.__content:
         getInfo(self)
