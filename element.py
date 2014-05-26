@@ -25,4 +25,5 @@ class Element(object):
     if isinstance( name, str ):
       self.__name = name
       return true
-    else raise Exception()
+    else:
+      raise Exception()
