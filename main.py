@@ -1,7 +1,13 @@
 import datetime
 from FSelement import Element
 from FSfolder import Folder
+from FSRootFolder import RootFolder
 from FSfile import File
 
-r = Folder("ROOOOOOOT")
-f = File("Filename", r, 10)
+def drawTree(root):
+  Folder.drawTree(root)
+
+root = RootFolder("/")
+fo = Folder("folder", root)
+fo2 = Folder("folder", fo)
+f = File("Filename", root, 10)

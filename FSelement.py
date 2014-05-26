@@ -2,7 +2,7 @@ import datetime
 
 class Element(object):
   
-  def __new__(self, name, parent):
+  def __init__(self, name, parent):
     # if isinstance( name, str ) and isinstance( parent, Folder ):
       self.__name = name
       self.__changeDate = datetime.datetime.now()

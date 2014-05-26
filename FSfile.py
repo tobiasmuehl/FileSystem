@@ -2,15 +2,15 @@ from FSelement import Element
 
 class File(Element):
   
-  def __new__(self, name, parent, size):
-    super().__new__(self, name, parent)
+  def __init__(self, name, parent, size):
+    Element.__init__(self, name, parent)
     if isinstance(size, int):
       self.__size = size
     else:
       raise Exception()
   
-  def getSize():
-    return __size
+  def getSize(self):
+    return self.__size
   
-  def getInfo():
+  def getInfo(self):
     return ""
