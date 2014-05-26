@@ -15,9 +15,7 @@ class Folder(Element):
       else:
           if Folder.root == None:
             raise Exception()
-          else: 
-            self.__parent = parent
-            parent.addElement(self)
+
       self.__content = [];
     
     def drawTree():
