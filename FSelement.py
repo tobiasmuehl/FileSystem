@@ -7,7 +7,7 @@ class Element(object):
       self.__name = name
       self.__changeDate = datetime.datetime.now()
       self.__parent = parent
-      parent.addElement(self)
+      if self != Folder.root: parent.addElement(self)
     else:
       raise Exception()
 
