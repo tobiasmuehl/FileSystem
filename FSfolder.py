@@ -51,4 +51,12 @@ class Folder(Element):
 
     def setRoot(root):
         root = root
-    
+
+    def listView(self):
+      for x in self.__content:
+        getInfo(self)
+        print (name.ljust(20), Type.ljust(20), size.ljust(20), changeDate.ljust(20), sep="")
+        getInfo(x)
+
+    def getType(self):
+      return "Folder"

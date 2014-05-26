@@ -1,4 +1,5 @@
 from FSelement import Element
+import string
 
 class File(Element):
   
@@ -11,6 +12,10 @@ class File(Element):
   
   def getSize(self):
     return self.__size
-  
-  def getInfo(self):
-    return ""
+
+  def getType(self):
+    extensions = {
+    'txt': 'Text File',
+    'mvkv': 'Matroska Video File'
+    }
+    return extensions[self.getName().split('.')[-1]]

@@ -18,9 +18,15 @@ class Element(object):
   
   def getChangeDate(self):
     return self.__changeDate
+
+  def getType(self):
+    return "Not a File or Folder"
   
   def getInfo(self):
-    return
+    name = self.getName()
+    size = self.getSize()
+    Typ = self.getType()
+    changeDate = self.getChangeDate()
   
   def setName(self, name):
     if isinstance( name, str ):
