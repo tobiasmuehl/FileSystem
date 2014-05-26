@@ -1,13 +1,14 @@
+import datetime
 
 class Element(object):
   
   def __new__(self, name, parent):
-    if isinstance( name, str ) and isinstance( parent, Folder ):
+    # if isinstance( name, str ) and isinstance( parent, Folder ):
       self.__name = name
       self.__changeDate = datetime.datetime.now()
       self.__parent = parent
-    else:
-      raise Exception()
+    # else:
+    #   raise Exception()
 
   def getName(self):
     return self.__name

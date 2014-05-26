@@ -1,3 +1,4 @@
+from FSelement import Element
 
 class File(Element):
   
@@ -5,7 +6,8 @@ class File(Element):
     super.__init__(name, parent)
     if isinstance(size, int):
       self.__size = size
-    else raise Exception()
+    else:
+      raise Exception()
   
   def getSize():
     return size

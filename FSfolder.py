@@ -1,15 +1,29 @@
+from FSelement import Element
+
+root = 0;
+def getRoot():
+  return root
+
+def setRoot(r):
+  root = r
+
 class Folder(Element):
-  __root = None;
-  __changeDate = None;
   
-  def __init__(self, name, size, parent):
-    super().__init__(name, size, parent)
-    self.__contains = [];
-    
-    if parent == None and __root == None:
-      __root = self
-    elif parent == None and isinstance(__root, Folder):
+  
+  
+  def __new__(self, name, parent=None):
+    if getRoot == 0:
+      setRoot(self)
+    elif parent == "" and isinstance(getRoot(), Folder):
       raise Exception("Root Folder already exists")
+
+    Folder.__init__(self, name, parent)
+    
+  def __init__(self, name, parent=getRoot()):
+    super().__new__(self, name, parent)
+    self.__contains = [];
+    self.__changeDate = None;
+
 
   def getSize(self):
     self.__size = 0
@@ -21,7 +35,7 @@ class Folder(Element):
     self.__contains.push(file)
 
   def drawTree():
-    drawTree(__root)
+    drawTree(root)
 
   def drawTree(self):
     for x in obj.__contains:
@@ -41,4 +55,7 @@ class Folder(Element):
         changeDate = new
     
     return new
+
+  def setRoot(root):
+    root = root
     

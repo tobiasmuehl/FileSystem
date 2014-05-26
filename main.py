@@ -1,6 +1,4 @@
 import datetime
-import element.py
-import folder.py
-import file.py
-
-# 
+from FSelement import Element
+from FSfolder import Folder
+from FSfile import File
