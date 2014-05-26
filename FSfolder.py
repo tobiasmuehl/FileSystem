@@ -8,11 +8,11 @@ class Folder(Element):
       if root == None:
         root = self
         parent = self
-      else raise Exception()
-    else
+      else: raise Exception()
+    else:
       if root == None:
         raise Exception()
-      else self.__parent = parent
+      else: self.__parent = parent
     self.__content = [];
     
   def drawTree():
