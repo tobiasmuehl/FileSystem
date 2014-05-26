@@ -6,7 +6,7 @@ class Element(object):
       self.__name = name
       self.__changeDate = datetime.datetime.now()
       self.__parent = parent
-    else
+    else:
       raise Exception()
 
   def getName(self):
