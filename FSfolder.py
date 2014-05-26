@@ -4,8 +4,15 @@ from FSelement import Element
 class Folder(Element):
   def __init__(self, name, parent):
     super.__init__(self, name, parent)
-    if root == None:
-      root = self
+    if parent == None:
+      if root == None:
+        root = self
+        parent = self
+      else raise Exception()
+    else
+      if root == None:
+        raise Exception()
+      else self.__parent = parent
     self.__content = [];
     
   def drawTree():
