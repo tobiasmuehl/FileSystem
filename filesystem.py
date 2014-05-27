@@ -48,11 +48,13 @@ class Folder(Element):
       
       Element.__init__(self, name, parent)
     
+    # Baumansicht zeichnen:
     def drawTree():
         print('Baumansicht'.center(80));
         print(''.ljust(80, '='))
         Folder.root.drawFolders(0)
 
+    # Rekursive Fkt zum Zeichnen eines Ordners mit allen seinen Unterordnern (Für Baumansicht):
     def drawFolders(self, level):
         space = "+"
         for i in range(0, level):
@@ -110,5 +112,9 @@ class File(Element):
     'txt': 'Text File',
     'mvkv': 'Matroska Video File'
     }
-    return extensions[self.getName().split('.')[-1]]
-
+    try:
+      t = extensions[self.getName().split('.')[-1]]
+    except(Exception):
+      t = "Unknown"
+    
+    return t
