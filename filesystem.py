@@ -110,7 +110,7 @@ class File(Element):
   def getType(self):
     extensions = {
     'txt': 'Text File',
-    'mvkv': 'Matroska Video File'
+    'mkv': 'Matroska Video File'
     }
     try:
       t = extensions[self.getName().split('.')[-1]]
