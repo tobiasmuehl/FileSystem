@@ -19,6 +19,6 @@ class File(Element):
   def getType(self):
     extensions = {
     'txt': 'Text File',
-    'mvkv': 'Matroska Video File'
+    'mkv': 'Matroska Video File'
     }
     return extensions[self.getName().split('.')[-1]]
