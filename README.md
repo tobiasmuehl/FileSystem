@@ -3,7 +3,7 @@ FileSystem
 Filesystem in Python.
 --------------------
 
-** Status: This project is not being developed any further. Students may steal and use for there own homework **
+** Status: This project is not being developed any further. Students may steal and use for their own homework **
 
 Features
 ----------
